@@ -10,7 +10,6 @@
     // someRecursive([4,6,8], val => val > 10); // false
 */ 
 
-// My way
 const someRecursive = (arr,isOdd)=>{
     if(arr.length == 0){
         return false;

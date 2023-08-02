@@ -18,7 +18,7 @@ const flatten = (arr)=>{
     }
     return result_array.concat(flatten(arr.slice(1)));
 }
-// Copied solution
+// Copied solution (this one is correct and efficient )
 function flatten(oldArr){
     var newArr = []
         for(var i = 0; i < oldArr.length; i++){

@@ -12,6 +12,5 @@ const reverse = (str)=>{
 }
 console.log(reverse('awesome'));
 console.log(reverse('hello'));
-
 console.log(reverse('Hi'));
 console.log(reverse('kiwitech'));
