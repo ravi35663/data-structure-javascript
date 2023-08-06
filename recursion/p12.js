@@ -14,6 +14,18 @@ const capitalizedWords = (works)=>{
     return temp_array = temp_array.concat(capitalizedWords(works.slice(1)));
 }
 
+// This one is more optimised
+
+function capitalizeFirst (array) {
+    if (array.length === 1) {
+      return [array[0][0].toUpperCase() + array[0].substr(1)];
+    }
+    const res = capitalizeFirst(array.slice(0, -1));
+    const string = array.slice(array.length - 1)[0][0].toUpperCase() + array.slice(array.length-1)[0].substr(1);
+    res.push(string);
+    return res;
+}
+
 console.log(capitalizedWords(['i', 'am', 'learning', 'recursion']))
 console.log(capitalizedWords(['delhi', 'is', 'in', 'india']));
 console.log(capitalizedWords(['england', 'is', 'better', 'county','to','live']))
