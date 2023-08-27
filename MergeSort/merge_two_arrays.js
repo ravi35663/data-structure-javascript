@@ -27,4 +27,17 @@ const mergeTwoArrays = (arr1,arr2)=>{
     }
     return arr;
 }
-console.log("Merge two sorted arrays" ,mergeTwoArrays([10,11,17],[1,2,30]));
+// console.log("Merge two sorted arrays" ,mergeTwoArrays([10,11,17],[1,2,30]));
+
+const mergeSort = (arr)=>{
+    if(arr.length<=1){
+        return arr;
+    }
+    let mid = Math.floor(arr.length/2)
+    const leftSideArray = mergeSort(arr.slice(0,mid));
+    const rightSideArray = mergeSort(arr.slice(mid));
+    return mergeTwoArrays(leftSideArray,rightSideArray);
+}
+
+console.log("Merge sort ",mergeSort([10,11,1,2,5,6,90,1,17]))
+console.log("Merge sort ",mergeSort([10,11,17,90,1,1,2,4,2,8,90,100,69]))
