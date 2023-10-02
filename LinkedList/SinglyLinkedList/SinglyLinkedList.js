@@ -142,6 +142,21 @@ class SinglyLinkedList{
 
     }
 
+    // Reverse a linked list
+    reverse(){
+        let current = this.head;
+        this.head = this.tail;
+        let prev = null;
+        let next = null;
+        while(current!=null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return this;
+    }
+
     view(){
         let item = this.head;
         while(item){
@@ -157,10 +172,11 @@ singly_linked_list.push(10);
 singly_linked_list.push(20);
 singly_linked_list.push(30);
 singly_linked_list.push(40);
-singly_linked_list.view();
+// singly_linked_list.view();
 // singly_linked_list.insertElement('ravi',9);
 // singly_linked_list.setElement(3,'ravi');
-singly_linked_list.remove();
+// singly_linked_list.remove();
+// singly_linked_list.view()
+singly_linked_list.reverse();
 singly_linked_list.view()
-
 module.exports = singly_linked_list;
