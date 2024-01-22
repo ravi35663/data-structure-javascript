@@ -15,41 +15,12 @@ Javascript to Get IP Address
 Javascript to Illustrate how User Authentication is Done
 Javascript to Shutdown Computer in Linux
 
-==> Factorial & Fibonacci Programs in Javascript
-Fibonacci Series Program in Javascript
-Javascript to Find First N Fibonacci Numbers
-Javascript to Find Nth Fibonacci Number using Recursion
-Javascript to Compute First N Fibonacci Numbers using Command Line Arguments
-Javascript to Generate Fibonacci Series using Command Line Argument
-Javascript to Find the Factorial of a Number
-Javascript to Find the Factorial of a Number using Recursion
-
 Pattern Programs in Javascript
 Javascript to Print Diamond Pattern
 Javascript to Print Floyd’s Triangle
 Javascript to Print Pascal Triangle
 Star Pattern Programs in Javascript
 Pyramid Patterns in Javascript
-
-==> Conversion Programs in Javascript
-Conversion Programs in Javascript
-Javascript to Convert Binary to Decimal
-Javascript to Convert Binary to Hexadecimal
-Javascript to Convert Binary to Octal
-Javascript to Convert Binary to Gray Code using Recursion
-Javascript to Convert Binary to Gray Code without Recursion
-Javascript to Convert Octal to Binary
-Javascript to Convert Octal to Decimal
-Javascript to Convert Decimal to Hexadecimal
-Javascript to Convert Decimal to Octal
-Javascript to Convert Decimal to Binary using Recursion
-Javascript to Convert Decimal to Binary and Count the Number of 1s
-Javascript to Convert Hexadecimal to Binary
-Javascript to Convert Numbers to Roman Numerals
-Javascript to Convert Roman Number to Decimal Number
-Temperature Conversion Program in Javascript
-Javascript to Convert Fahrenheit to Celsius
-Javascript to Convert Celsius to Fahrenheit
 
 ==> Javascriptming Examples on Data Types & Union
 Javascript to Find the Range of Basic Data Types
