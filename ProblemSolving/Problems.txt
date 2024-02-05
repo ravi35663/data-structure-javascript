@@ -1,7 +1,6 @@
 ==> Javascript on Date, Time & Year
 Leap Year Program in Javascript
 
-
 ==> Special Javascript
 Javascript without using the Main() Function
 Javascript to Print Statement without Semicolon
