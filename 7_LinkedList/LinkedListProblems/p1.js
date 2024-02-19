@@ -26,6 +26,53 @@ class SinglyLinkedList{
         this.tail = null;
         this.length = 0;
     }
+    // Find the middle of a linked list.
+    findMiddle(){
+        let ll_length = Math.floor(this.length/2);
+        let temp = this.head;
+        while(ll_length){
+            temp = temp.next
+        }
+        return temp.value;
+    }
+    //Delete nodes with a given value in a linked list
+    deleteNodes(item){
+        while(1){
+            let ll_length = this.length;
+            let temp = this.head;
+            let index = 0;
+            while(index < ll_length){
+                if(item === temp.value){
+                    break
+                }
+                index++;
+                temp = temp.next
+            }
+            if(i<ll_length){
+                if(i==0){
+                    this.deleteAtFirst()
+                }else if(i == ll_length-1){
+                    this.deleteAtLast()
+                }else{
+                    this.deleteAtSpecificPosition(index)
+                }
+            }else{
+                return;
+            }
+        }
+    }
+    // Count occurrences of a given element in a linked list
+    countOccurrences(item){
+        let count = 0
+        let temp = this.head
+        while(temp!=null){
+            if(temp.value == item){
+                count++
+            }
+            temp = temp.next
+        }
+        return  count
+    } 
     // To add element at the end of SLL
     addAtLast(value){
         const node = new Node(value);
@@ -136,28 +183,50 @@ class SinglyLinkedList{
             return temp;
         }
     }
+    sizeOfLinkedList(){
+        return this.length
+    }
+    //Search item in linked list
+    searchItem(item){
+        let temp = this.head
+        let index = 0
+        while(temp!=null){
+            if(temp.value === item){
+                return index
+            }
+            temp = temp.next
+        }
+        return -1
+    }
+
     access(){
         let temp = this.head;
+        let values = ''
         while(temp){
-            process.stdout.write(`${temp.value} `);
+            values = values + '  '+ temp.value 
             temp = temp.next;
         }
+        console.log(values);
+        return values
     }
 }
 
 const sll = new SinglyLinkedList();
-sll.addAtLast(10);
-sll.addAtLast(20);
-sll.addAtLast(30);
-sll.addAtLast(40);
-sll.addAtLast(50);
-sll.addAtFirst(60);
-sll.addAtFirst(70);
-sll.addAtSpecificPosition(0,100);
-sll.addAtSpecificPosition(111,200);
-sll.addAtSpecificPosition(6,300);
+// sll.addAtLast(10);
+// sll.addAtLast(20);
+// sll.addAtLast(30);
+// sll.addAtLast(40);
+// sll.addAtLast(50);
+// sll.addAtFirst(60);
+// sll.addAtFirst(70);
+// sll.addAtSpecificPosition(0,100);
+// sll.addAtSpecificPosition(111,200);
+// sll.addAtSpecificPosition(6,300);
 // sll.deleteAtLast();
 // sll.deleteAtFirst();
 // sll.deleteAtLast();
-sll.deleteAtSpecificPosition(9);
-sll.access();
+// sll.deleteAtSpecificPosition(9);
+// sll.access();
+// while(1){
+//     console.log('Actions: 1)Add at start 2)Add at end 3) Add at specific\n4)Delete at start 5)Delete at end 6)Delete at specific\n7.Access Linked List 8)Find Length of linked List 9)Find Occurrence of item\n 10) Delete Nodes 11) Search Item 12)Find Middle')
+// }
