@@ -2,89 +2,17 @@
 Leap Year Program in Javascript
 
 ==> Special Javascript
-Javascript without using the Main() Function
-Javascript to Print Statement without Semicolon
-Javascript to Print Semicolon without using Semicolon
-Javascript to Display its own Source Code as Output
-Javascript to Display the ATM Transaction
-Javascript to Calculate EMI
-Javascript to Calculate Electricity Bill
-Fizzbuzz Program in Javascript
-Javascript to Get IP Address
-Javascript to Illustrate how User Authentication is Done
-Javascript to Shutdown Computer in Linux
-
-Pattern Programs in Javascript
-Javascript to Print Diamond Pattern
-Javascript to Print Floyd’s Triangle
-Javascript to Print Pascal Triangle
-Star Pattern Programs in Javascript
-Pyramid Patterns in Javascript
-
-==> Javascriptming Examples on Data Types & Union
-Javascript to Find the Range of Basic Data Types
-Union in Javascriptming with Examples
-Javascript to Find the Size of a Union
-
-==> Javascriptming Examples on Math Functions
-Javascript to Calculate the Value of sin(x)
-Javascript to Calculate the Value of cos(x)
-Javascript to Calculate the Sum of cos(x) Series
-Javascript to Find Quotient and Remainder
-Javascript to Find the Roots of a Quadratic Equation
-Javascript to Find Square Root of a Number
-Javascript to Read Coordinate Points and Determine its Quadrant
-Javascript to Find Simple Interest
-Javascript to Find Compound Interest
-Javascript to Simulate a Simple Calculator
-Javascript to Calculate the value of nCr
-Javascript to Calculate the value of nPr
-Javascript to Evaluate the Given Polynomial Equation
-Javascript to Find Mean, Variance and Standard Deviation
-Javascript to Add Two Complex Numbers
-Javascript to Find Power of a Number
-Javascript to Calculate Pow (x,n)
-
-
-===> Javascriptming Examples on Progression Series
-Javascript to Find the Sum of Arithmetic Progression Series
 Javascript to Find the Sum of Geometric Progression Series
 Javascript to Find the Sum of Harmonic Progression Series
 Javascript to Find Sum of Series 1 + 1/2 + 1/3 + 1/4 + ……. + 1/N
 Javascript to Find Sum of Series 1^2 + 2^2 + …. + n^2
 Javascript to Find Sum of Series 1^3 + 2^3 + 3^3 + … + n^3
 Javascript to Find Sum of the Series 1/1! + 2/2! + 3/3! + ……1/N!
-
-
-==> Javascript on Area and Volume
-Javascript to Find the Area of a Circle
-Javascript to Find the Area of a Triangle
-Javascript to Find Area of Parallelogram
-Javascript to Find Area of Rhombus
-Javascript to Find Area of Trapezium
-Javascript to Find Area of a Right Angled Triangle
-Javascript to Find the Area of Different Geometrical Shapes
-Javascript to Find Volume and Surface Area of Cone
-Javascript to Find Volume and Surface Area of Cuboid
-Javascript to Find Volume and Surface Area of Cylinder
-Javascript to Find Volume and Surface Area of Sphere
-Javascript to Find Volume and Surface Area of a Cube
-Javascript to Find the Perimeter of a Circle, Rectangle and Triangle
-
-
-==> Javascript on GCD, LCM & HCF
-Javascript to Find GCD and LCM of Two Numbers
+Javascript to Find GCD and LCM of Two Numbers with and without recursive
 Javascript to Find GCD and LCM of Two Numbers using Euclidean Algorithm
-Javascript to Find GCD of Two Numbers
-Javascript to Find LCM of Two Numbers
-Javascript to Find HCF of Two Numbers
-Javascript to Find HCF of Two Numbers without Recursion
-
 
 ==> Javascript on Array
-Javascript to Find the Number of Elements in an Array
 Javascript to Delete an Element from an Array
-Javascript to Find Sum of Array Elements using Pointer
 Javascript to Print all Non Repeated Elements in an Array
 Javascript to Cyclically Permute the Elements of an Array
 Javascript to Find Missing Numbers in Array
@@ -92,29 +20,25 @@ Javascript to Find Union and Intersection of Two Arrays
 Javascript to Split the Array and Add First Part to the End
 Javascript to Implement Bit Array
 Javascript to Implement Variable Length Array
-Largest Element in Array in Javascript	
 Find Largest Two Numbers in Array in Javascript
 Second Largest and Smallest Element of an Array in Javascript	
 Largest Element in an Array using Recursion in Javascript	
 Maximum Difference b/w Two Elements in Javascript
 Insert an Element in the Sorted Array in Javascript
 Insert an Element in an Array in Javascript
-Delete an Element from an Array in Javascript
 Remove Duplicates from Array in Javascript
 Reverse an Array in Javascript
 Separate Odd and Even Numbers from an Array in Javascript
 Cyclically Permute the Elements of an Array in Javascript
-Find Number of Elements in an Array in Javascript
 Non Repeated Elements in an Array in Javascript
 Find Missing Numbers in Array in Javascript
 Find Missing Numbers of a Range [1, n] in Javascript
 Array Bounds Checking in Javascript
-Count Occurrences of C Keyword using Array in Javascript
 Two Odd Occurring Elements in an Array in Javascript
 Bit Array in Javascript
 Variable Length Array in Javascript
 Find Mode of an Array in Javascript
-Swap Array Elements using Pointers in Javascript
+Swap Array Elements in Javascript
 Split an Array & Add First Part to the End in Javascript
 Search an Element in an Array using Recursion in Javascript
 Segregate 0s and 1s in an Array in Javascript
@@ -138,8 +62,6 @@ Print Square of Array Elements in Javascript
 Print Ascii Values using Array in Javascript
 Closest to Zero Program in Javascript
 Union & Intersection of 2 Arrays
-
-==> Javascriptming Examples on Matrix
 Javascript to Perform Matrix Multiplication
 Javascript to Display Upper Triangular Matrix
 Javascript to Find Transpose of a Matrix
@@ -179,6 +101,7 @@ Upper Triangular Matrix in Javascript
 Find Frequency of Odd & Even Numbers in Matrix in Javascript
 Message Encoding using Matrix in Javascript
 LU Decomposition in Javascript
+
 
 
 ==> Javascript on Bitwise Operation
