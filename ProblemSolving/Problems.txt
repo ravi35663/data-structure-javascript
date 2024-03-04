@@ -2,13 +2,7 @@
 Leap Year Program in Javascript
 
 ==> Special Javascript
-Javascript to Find the Sum of Geometric Progression Series
-Javascript to Find the Sum of Harmonic Progression Series
-Javascript to Find Sum of Series 1 + 1/2 + 1/3 + 1/4 + ……. + 1/N
-Javascript to Find Sum of Series 1^2 + 2^2 + …. + n^2
-Javascript to Find Sum of Series 1^3 + 2^3 + 3^3 + … + n^3
 Javascript to Find Sum of the Series 1/1! + 2/2! + 3/3! + ……1/N!
-Javascript to Find GCD and LCM of Two Numbers with and without recursive
 Javascript to Find GCD and LCM of Two Numbers using Euclidean Algorithm
 
 ==> Javascript on Array
