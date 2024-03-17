@@ -3,7 +3,6 @@ Leap Year Program in Javascript
 
 ==> Special Javascript
 Javascript to Find Sum of the Series 1/1! + 2/2! + 3/3! + ……1/N!
-Javascript to Find GCD and LCM of Two Numbers using Euclidean Algorithm
 
 ==> Javascript on Array
 Javascript to Delete an Element from an Array
