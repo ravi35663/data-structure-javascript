@@ -1,8 +1,3 @@
-Capitalize the first letter of each word in a sentence.
-Check if two strings are rotations of each other.
-Find the first non-repeating character in a string.
-Replace all spaces in a string with '%20'.
-Check if a string has balanced parentheses.
 Sort an array of strings based on their lengths.
 Find the intersection of two arrays.
 Find the union of two arrays.
