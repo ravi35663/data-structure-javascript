@@ -33,7 +33,7 @@
     -> concat: 	O(n)
     -> slice: O(n)
     -> splice: 	O(n)
-    -> sort: O(n logn)
+    -> sort: O (nlogn)
     -> map: O(n)
     -> filter: 	O(n)
     -> forEach:	O(n)
