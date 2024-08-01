@@ -3,7 +3,6 @@
     -> finding an element in an array is known as linear search
     -> Time complexity of indexOf, findIndex, find and includes is O(N).
     -> Time Complexity of Linear search is O(N).
-
 */
 
 const findItem = (arr,value)=>{
