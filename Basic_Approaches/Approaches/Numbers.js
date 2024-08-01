@@ -151,3 +151,31 @@
               remainder r.
             4) Then repeat the step 1
 */
+
+/*
+==> Areas :-
+    -> Area of Triangle = ( base * height ) / 2
+    -> Area of the circle = PI * r * r;
+    -> Area of the rectangle = base * height;
+    -> Area of Triangle Having 3 sides (a,b,c):
+	    P = (a+b+c) (perimeter)
+	    S = P/2 (Semi-perimeter)
+	    A = sqrt(s(s-a)(s-b)(s-c));
+*/
+
+/*
+==> Colors:
+    -> RGB : - (RGB) 
+	-> Red -> 0 to 255 (range max) (255,0,0)
+	-> Green -> 0 to 255 (range max) (0,255,0)
+	-> Blue -> 0 to 255 (range max) (0,0,255)
+	-> Black -> (0,0,0)
+	-> White -> (255,255,255) (RGB)
+	-> 4MB image --> row * column * 3(3 is RGB) * 8 bits
+    -> 255 is maximum space of a color
+    -> sequence of images is known as video .
+    -> image is 3d object (colored image black and white is 3d image)
+    -> if we add another dimension ‘which is time’ to image then it become 4d image
+        which is a video.
+    -> video is a 4d matrix .
+*/
