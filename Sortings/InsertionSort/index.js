@@ -12,3 +12,23 @@
     -> The inner loop only runs when the last element of the sorted array is greater than the first element 
        of the unsorted array.
 */
+
+
+function insertionSort(arr){
+   for(let i=1;i<arr.length;i++){
+      const cv = arr[i];
+      let prev = i-1;
+      // making current space for current value 
+      while(prev >= 0 && cv < arr[prev]){
+         // [arr[prev],arr[prev+1]] = [arr[prev+1],arr[prev]];
+         arr[prev+1] = arr[prev]// 
+         prev--;
+      }
+      arr[prev+1] = cv
+   }
+   return arr;
+}
+
+const arr = [5,3,4,1,2];
+const result = insertionSort(arr);
+console.log("Result array is : ",result);
