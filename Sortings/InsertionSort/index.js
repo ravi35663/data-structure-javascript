@@ -13,6 +13,12 @@
        of the unsorted array.
 */
 
+/*
+   -> T.C = O(n^2) (worse case)
+   -> Note :- if you have a small dataset then you can go with sorting algorithms which have O(N^2) 
+      complexity. 
+   -> For large datasets try those algorithms which have O(NLogN) complexity.
+*/
 
 function insertionSort(arr){
    for(let i=1;i<arr.length;i++){
