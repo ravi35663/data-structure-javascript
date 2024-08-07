@@ -1,22 +1,22 @@
-//
 /*
     1) Implement a singly linked list.
-        -> Insert a node at the beginning of a linked list.
-        -> Insert a node at the end of a linked list.
-        -> Insert a node at a specific position in a linked list.
-        -> Delete a node from the beginning of a linked list.
-        -> Delete a node from the end of a linked list.
-        -> Delete a node at a specific position in a linked list.
-        -> Find the length of a linked list.
-        -> Search for a given element in a linked list.
-        -> Count occurrences of a given element in a linked list.
-        -> Delete nodes with a given value in a linked list.
-        -> Find the middle of a linked list.
+        1) Insert a node at the beginning of a linked list.
+        2) Insert a node at the end of a linked list.
+        3) Insert a node at a specific position in a linked list.
+        4) Delete a node from the beginning of a linked list.
+        5) Delete a node from the end of a linked list.
+        6) Delete a node at a specific position in a linked list.
+        7) Find the length of a linked list.
+        8) Search for a given element in a linked list.
+        9) Count occurrences of a given element in a linked list.
+        10) Delete nodes with a given value in a linked list.
+        11) Find the middle of a linked list.
 */
+
 class Node {
     constructor(value){
         this.value = value;
-        this.next = null;
+        this.next = null
     }
 }
 
@@ -26,91 +26,36 @@ class SinglyLinkedList{
         this.tail = null;
         this.length = 0;
     }
-    // Find the middle of a linked list.
-    findMiddle(){
-        let ll_length = Math.floor(this.length/2);
-        let temp = this.head;
-        while(ll_length){
-            temp = temp.next
-        }
-        return temp.value;
-    }
-    //Delete nodes with a given value in a linked list
-    deleteNodes(item){
-        while(1){
-            let ll_length = this.length;
-            let temp = this.head;
-            let index = 0;
-            while(index < ll_length){
-                if(item === temp.value){
-                    break
-                }
-                index++;
-                temp = temp.next
-            }
-            if(i<ll_length){
-                if(i==0){
-                    this.deleteAtFirst()
-                }else if(i == ll_length-1){
-                    this.deleteAtLast()
-                }else{
-                    this.deleteAtSpecificPosition(index)
-                }
-            }else{
-                return;
-            }
-        }
-    }
-    // Count occurrences of a given element in a linked list
-    countOccurrences(item){
-        let count = 0
-        let temp = this.head
-        while(temp!=null){
-            if(temp.value == item){
-                count++
-            }
-            temp = temp.next
-        }
-        return  count
-    } 
-    // To add element at the end of SLL
-    addAtLast(value){
+    // 1) Insert a node at the beginning of a linked list.
+    insertNodeAtBegnining(value){
         const node = new Node(value);
-        if(this.head===null){
+        if(!this.head){
+            this.tail = node;
+        }else{
+            node.next = this.head;
+        }
+        this.head = node;
+        this.length++
+    }
+
+    // 2) Insert a node at the end of a linked list.
+    insertNodeAtEnd(value){
+        const node = new Node(value);
+        if(!this.head){
             this.head = node;
             this.tail = node;
-        } else{
+        }else{
             this.tail.next = node;
             this.tail = node;
         }
         this.length++;
-        return node;
     }
-
-    // add element at the beginning 
-    addAtFirst(value){
-        const node = new Node(value);
-        if(this.head === null){
-            this.head = node;
-            this.tail = node;
-        }else{
-            node.next = this.head;
-            this.head = node;
-        }
-        this.length++;
-        return node;
-    }
-
-    // add element at any position
-    addAtSpecificPosition(position,value){
-        if(position < 0){
-            return;
-        }
-        if(position == 0 ){
-            this.addAtFirst(value);
-        }else if (position >= this.length){
-            this.addAtLast(value);
-        }else {
+    // 3) Insert a node at a specific position in a linked list.
+    insertNodeAtSpecificPosition(position,value){
+        if(position >=0 && position <= this.length){
+            if(position === 0 ){
+                return this.insertNodeAtBegnining(value);
+            }
             const node = new Node(value);
             let temp = this.head;
             let prev = null;
@@ -120,59 +65,64 @@ class SinglyLinkedList{
                 position--;
             }
             prev.next = node;
-            prev.next.next = temp;
+            node.next = temp;
             this.length++;
+
+        }else{
+            console.log("Please enter valid position.");
         }
-        return this.head;
     }
 
-    // Delete node at the beginning of sll
-    deleteAtFirst(){
-        if(this.length === 0 ){
+    // 4) Delete a node from the beginning of a linked list.
+    deleteNodeAtBeginning(){
+        if(!this.head){
+            console.log("Linked list is empty")
             return;
         }
-        const node=this.head;
-        if(this.length == 1){
+        const node = this.head;
+        if(!this.head.next){
             this.head = null;
             this.tail = null;
-        }else {
-            this.head = this.head.next;
+        }else{
+            this.head = this.head.next
         }
         this.length--;
         return node;
     }
 
-    deleteAtLast(){
-        if(this.length < 0){
+    //5) Delete a node from the end of a linked list.
+    deleteNodeAtEnd(){
+        if(!this.head){
+            console.log("Linked list is empty")
             return;
         }
-        if(this.length === 1){
-            return deleteAtFirst();
+        const node = this.tail;
+        if(this.length == 1){
+            this.head = null;
+            this.tail = null;
         }else{
             let temp = this.head;
-            let prev = null;
-            while(temp.next){
-                prev = temp;
+            while(temp.next != this.tail){
                 temp = temp.next;
             }
-            prev.next = null;
-            this.tail = prev;
-            this.length--;
-            return temp;
+            temp.next = null;
+            this.tail = temp
         }
+        this.length--;
+        return node;
     }
 
-    deleteAtSpecificPosition(position){
-        if(position < 0 || position >= this.length){
-            return;
+    // 6) Delete a node at a specific position in a linked list.
+    deleteNodeAtSpecificPosition(position){
+        if(position <0 || position>=this.length){
+            console.log("Invalid position")
         }
-        if(position === 0){
-            return this.deleteAtFirst();
-        }else if(position === this.length - 1){
-            return this.deleteAtLast();
+        if(position == 0){
+            return this.deleteNodeAtBeginning();
+        }else if(position == this.length-1){
+            return this.deleteNodeAtEnd()
         }else{
-            let temp = this.head;
-            let prev = null;
+            let prev = null,temp = this.head;
             while(position){
                 prev = temp;
                 temp = temp.next;
@@ -183,50 +133,117 @@ class SinglyLinkedList{
             return temp;
         }
     }
-    sizeOfLinkedList(){
-        return this.length
-    }
-    //Search item in linked list
-    searchItem(item){
-        let temp = this.head
-        let index = 0
-        while(temp!=null){
-            if(temp.value === item){
-                return index
-            }
-            temp = temp.next
-        }
-        return -1
-    }
 
-    access(){
+    // 7) Find the length of a linked list.
+    lengthOfLinkedList(){
         let temp = this.head;
-        let values = ''
+        let length = 0;
         while(temp){
-            values = values + '  '+ temp.value 
+            length++;
             temp = temp.next;
         }
-        console.log(values);
-        return values
+        console.log("Length of the linked list is: ",length)
+        return length;
+    }
+
+    // 8) Search for a given element in a linked list.
+    findElement(item){
+        let temp = this.head;
+        let index = 0;
+        while(temp){
+            if(temp.value == item){
+                console.log(`${item} found at index ${index} `)
+                return index;
+            }
+            temp = temp.next;
+            index++;
+        }
+        console.log(`${item} does not exists in linked list`)
+        return - 1
+    }
+    // 9) Count occurrences of a given element in a linked list.
+    frequency(item){
+        let count = 0;
+        let temp = this.head;
+        while(temp){
+            if(temp.value == item){
+                count++;
+            }
+            temp = temp.next;
+        }
+        console.log(`Occurance of ${item} is ${count}`);
+        return count;
+    }
+
+    // 10) Delete nodes with a given value in a linked list.
+    deleteNodes(value){
+        while(true){
+            let temp = this.head;
+            let index = 0;
+            while(temp){
+                if(temp.value === value){
+                    break
+                }
+                temp = temp.next;
+                index++;
+            }
+            if(!temp){
+                break;
+            }
+            if(index === 0){
+                this.deleteNodeAtBeginning()
+            }else if(index === this.length-1){
+                this.deleteNodeAtEnd()
+            }else{
+                this.deleteNodeAtSpecificPosition(index);
+            }
+        }
+    }
+
+    // 11) Find the middle of a linked list.
+    findMiddleElementOfLL(){
+        let temp = this.head;
+        let mid = Math.floor(this.length/2);
+        while(mid){
+            temp = temp.next;
+            mid--;
+        }
+        console.log("Middle element of the linked list is : ",temp.value);
+        return temp.value;
+    }
+
+    viewLinkedList(){
+        let temp = this.head;
+        while(temp){
+            process.stdout.write(`${temp.value} `)
+            temp = temp.next
+        }
     }
 }
 
-const sll = new SinglyLinkedList();
-// sll.addAtLast(10);
-// sll.addAtLast(20);
-// sll.addAtLast(30);
-// sll.addAtLast(40);
-// sll.addAtLast(50);
-// sll.addAtFirst(60);
-// sll.addAtFirst(70);
-// sll.addAtSpecificPosition(0,100);
-// sll.addAtSpecificPosition(111,200);
-// sll.addAtSpecificPosition(6,300);
-// sll.deleteAtLast();
-// sll.deleteAtFirst();
-// sll.deleteAtLast();
-// sll.deleteAtSpecificPosition(9);
-// sll.access();
-// while(1){
-//     console.log('Actions: 1)Add at start 2)Add at end 3) Add at specific\n4)Delete at start 5)Delete at end 6)Delete at specific\n7.Access Linked List 8)Find Length of linked List 9)Find Occurrence of item\n 10) Delete Nodes 11) Search Item 12)Find Middle')
-// }
+
+const linked_list = new SinglyLinkedList();
+linked_list.insertNodeAtBegnining(30)
+linked_list.insertNodeAtEnd(70)
+linked_list.insertNodeAtBegnining(50)
+linked_list.insertNodeAtEnd(20)
+linked_list.insertNodeAtEnd(10)
+linked_list.insertNodeAtBegnining(50)
+// linked_list.insertNodeAtEnd(10)
+// linked_list.insertNodeAtEnd(10)
+// linked_list.insertNodeAtEnd(10)
+// linked_list.insertNodeAtEnd(10)
+// linked_list.insertNodeAtEnd(10)
+linked_list.viewLinkedList();
+console.log("Updated linked list");
+// linked_list.lengthOfLinkedList();
+// linked_list.findElement(20);
+// linked_list.frequency(-10);
+linked_list.deleteNodes(50);
+// linked_list.findMiddleElementOfLL();
+// linked_list.deleteNodeAtBeginning()
+// linked_list.deleteNodeAtEnd();
+// linked_list.deleteNodeAtSpecificPosition(1);
+// linked_list.insertNodeAtSpecificPosition(0,1000)
+// linked_list.insertNodeAtSpecificPosition(1,1000)
+linked_list.viewLinkedList();
