@@ -1,3 +1,17 @@
+Implement a singly linked list.
+Implement a doubly linked list.
+Implement a circular linked list.
+Insert a node at the beginning of a linked list.
+Insert a node at the end of a linked list.
+Insert a node at a specific position in a linked list.
+Delete a node from the beginning of a linked list.
+Delete a node from the end of a linked list.
+Delete a node at a specific position in a linked list.
+Find the length of a linked list.
+Search for a given element in a linked list.
+Count occurrences of a given element in a linked list.
+Delete nodes with a given value in a linked list.
+Find the middle of a linked list.
 Detect a loop in a linked list.
 Find the starting point of the loop in a linked list.
 Remove the loop in a linked list.
@@ -34,6 +48,3 @@ Reverse alternate k nodes in a linked list.
 Alternating split of a linked list into two separate lists.
 Reverse blocks of k nodes in a linked list.
 Check if a linked list is a palindrome or not in O(n) time.
-Implement a singly linked list.
-Implement a doubly linked list.
-Implement a circular linked list.
