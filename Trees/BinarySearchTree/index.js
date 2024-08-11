@@ -1,3 +1,21 @@
+/*
+===> Binary Search Tree :-
+    -> Every parent node has at most two children.
+    -> Every node to the left of the parent node is always less than the parent.
+    -> Every node to the right of the parent node is always greater than the parent.
+*/
+
+/*
+===> Big O of BST:-
+    -> Search : O(LogN)( 😬Not Guarantees because if three is linear then it will go on for n) 
+    -> Insert: O(LogN)( 😬Not Guarantees because if three is linear then it will go on for n)
+*/
+
+/*
+    
+
+*/
+
 const Node = require('./Node');
 class BinarySearchTree{
     constructor(){
