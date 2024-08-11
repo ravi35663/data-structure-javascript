@@ -1,3 +1,21 @@
+/*
+==> Doubly Linked List :-
+    -> Doubly linked list is identical to singly linked list with an extra previous pointer.
+    -> '[Previous Address | Value | Next Address]' -> this is how DLL Node looks like.
+    -> Doubly linked lists take extra memory but give you more flexibility with insertion, 
+       deletion and all.
+    -> Doubly linked lists are better for finding node (almost half time of singly linked 
+       list)
+*/ 
+
+/*
+==> BigO of DLL :-
+    -> Insertion: O(1) (At beginning and end)
+    -> Removal:   O(1) (At beginning and end)
+    -> Searching: O(N/2) => O(N)
+    -> Accessing: O(N/2) => O(N)
+*/ 
+
 const {Node} = require('./CreateNode');
 class DoublyLinkedList{
     constructor(){
