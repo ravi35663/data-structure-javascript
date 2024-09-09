@@ -10,7 +10,7 @@
 ===> BinaryHeaps:
     ->  Binary heap is similar to binary search tree, but there are some different rules that is order 
         of sibling nodes are not considered as binary search tree.
-    -> Max and Min Binaru heaps are two type of binary heaps.
+    ->  Max and Min Binary heaps are two type of binary heaps.
 */
 
 /*

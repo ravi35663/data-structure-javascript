@@ -17,14 +17,14 @@
 ===> Extract Maximum value:
     ->  The procedure for deleting the root from the heap (effiently extracting maximum-element from 
         the max heap or extracting the minimum element from the min-heap) and restoring the 
-        properties is called down-heap (AKA bubble-down, shift-down,extract min-max).
+        properties is called down-heap (AKA bubble-down, shift-down, extract min-max).
 */ 
 
 /*
     Steps to extract maximum element from the heap:
     1) Swap the first value in the values (arr) with the last one.
     2) Pop from the values properties, so you can return the value at the end.
-    3) Have the new-root "sinke-down" to the correct spot
+    3) Have the new-root "sink-down" to the correct spot
         -> Your parent index start at 0 (root index)
         -> find the index of your left child ( 2*index + 1) (Make sure it is not out of bound)
         -> If left child is greater than parent then swap with parent
@@ -107,18 +107,18 @@ class MaxBinaryHeap{
         }
     }
 
-    bubbleUp(){
-        let child_index = this.values.length-1;
-        while(child_index > 0){
-            let parent = Math.floor((child_index-1)/2);
-            if(this.values[child_index] > this.values[parent]){
-                [this.values[child_index],this.values[parent]] = [this.values[parent],this.values[child_index]];
-                child_index = parent;
-            }else{
-                break;
-            }
-        }
-    }
+    // bubbleUp(){
+    //     let child_index = this.values.length-1;
+    //     while(child_index > 0){
+    //         let parent = Math.floor((child_index-1)/2);
+    //         if(this.values[child_index] > this.values[parent]){
+    //             [this.values[child_index],this.values[parent]] = [this.values[parent],this.values[child_index]];
+    //             child_index = parent;
+    //         }else{
+    //             break;
+    //         }
+    //     }
+    // }
 
     viewMaxBinaryHeap(){
         console.log("Values: ",this.values);
