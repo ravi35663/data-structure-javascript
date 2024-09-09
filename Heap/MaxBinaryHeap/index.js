@@ -48,6 +48,19 @@ class MaxBinaryHeap{
         this.values.push(element);
         this.bubbleUp();
     }
+
+    bubbleUp(){
+        let child_index = this.values.length-1;
+        while(child_index > 0){
+            let parent = Math.floor((child_index-1)/2);
+            if(this.values[child_index] > this.values[parent]){
+                [this.values[child_index],this.values[parent]] = [this.values[parent],this.values[child_index]];
+                child_index = parent;
+            }else{
+                break;
+            }
+        }
+    }
     // Remove latest element
     extractMax(){
         // [this.values[0],this.values[this.values.length-1]] = [this.values[this.values.length-1],this.values[0]]
