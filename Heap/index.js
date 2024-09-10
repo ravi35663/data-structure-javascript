@@ -11,6 +11,17 @@
     ->  Binary heap is similar to binary search tree, but there are some different rules that is order 
         of sibling nodes are not considered as binary search tree.
     ->  Max and Min Binary heaps are two type of binary heaps.
+    ->  Binary Heaps are very useful data structures for sorting, and implementing other 
+        data structure like priority queue.
+    -> With a little bit of math we can represent heaps using array/list.
+*/
+
+/*
+===> BigO of BinaryHeap:
+    -> TimeComplexity
+    ->  Insertion: O(LogN)
+    ->  Deletion: O(LogN)
+    ->  Search: O(N)
 */
 
 /*
