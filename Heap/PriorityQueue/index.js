@@ -2,7 +2,7 @@
 ===> Priority Queue:
     ->  Priority-Queue is a data-structure where each element has a priority.
     ->  Elements with higher priorities are served before elements with lower priorities.
-    -> Priority queue is seprate from heap, it is concept.
+    -> Priority queue is separate from heap, it is concept.
     -> You can implementb priority queue using array, linked list, heap ..etc
 */ 
 
@@ -11,11 +11,15 @@
 1) Write a min-binary-heap (Lower number means higher priority)
 2) Each node has a 'val' and 'priority' use the priority to build the heap
 3) Enqueue: 
-    ->  Engueue method accepts a value and priority, makes a new node and puts it in the right spot 
-        based off its priority.  
+    ->  Enqueue method accepts a value and priority, makes a new node and puts it in the right spot 
+        based off its priority. 
+    ->  TimeComplexity is O(LogN) 
 4) Dequeue: 
     ->  Deueue method removes root element, returns it and rearrage heap using priority.
+    ->  TimeComplexity is O(LogN)
 */ 
+
+
 
 class Node{
     constructor(value,priority){
@@ -56,7 +60,45 @@ class PriorityQueue{
     }
     // removing item from root and rearranging the items
     Dequeue(){
-        console.log("Inprogress")
+        if(this.values.length === 0){
+            return null;
+        }
+        const min = this.values[0];
+        const item = this.values.pop()
+        if(this.values.length > 0){
+            this.values[0] = item;
+            // Bubble Down (rearrange the heap)
+            this.bubbleDown();
+        }
+        return min;
+    }
+    bubbleDown(){
+        let p_id = 0;
+        let length = this.values.length;
+        while(true){
+            let leftChildIndex = (2* p_id +1 );
+            let rightChildIndex = 2* (p_id+1);
+            let swap = null;
+            if(length > leftChildIndex){
+                if(this.values[leftChildIndex].priority < this.values[p_id].priority ){
+                    swap = leftChildIndex;
+                }
+            }
+            if(length > rightChildIndex){
+                if(
+                    (swap === null && this.values[rightChildIndex].priority < this.values[p_id].priority) ||
+                    (swap !== null && this.values[rightChildIndex].priority < this.values[swap].priority)
+                    ){
+                        swap = rightChildIndex;
+                    }
+            }
+            if(swap === null){
+                break;
+            }else{
+                [this.values[swap],this.values[p_id]] = [this.values[p_id],this.values[swap]]
+                p_id = swap;
+            }
+        }
     }
 }
 
@@ -74,4 +116,7 @@ priority_queue.Enqueue(10,2)
 priority_queue.Enqueue(10,7)
 priority_queue.Enqueue(10,4)
 priority_queue.Enqueue(10,0)
+priority_queue.viewPriorityQueue();
+priority_queue.Dequeue();
+priority_queue.Enqueue(10,-1)
 priority_queue.viewPriorityQueue();
