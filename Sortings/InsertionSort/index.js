@@ -22,18 +22,26 @@
 
 function insertionSort(arr){
    for(let i=1;i<arr.length;i++){
-      const cv = arr[i];
-      let prev = i-1;
-      // making current space for current value 
-      while(prev >= 0 && cv < arr[prev]){
-         // [arr[prev],arr[prev+1]] = [arr[prev+1],arr[prev]];
-         arr[prev+1] = arr[prev]// 
-         prev--;
+      for(let j=i; j> 0 && arr[j] < arr[j-1];j-- ){
+         [arr[j],arr[j-1]] = [arr[j-1],arr[j]];
       }
-      arr[prev+1] = cv
    }
-   return arr;
 }
+
+// function insertionSort(arr){
+//    for(let i=1;i<arr.length;i++){
+//       const cv = arr[i];
+//       let prev = i-1;
+//       // making current space for current value 
+//       while(prev >= 0 && cv < arr[prev]){
+//          // [arr[prev],arr[prev+1]] = [arr[prev+1],arr[prev]];
+//          arr[prev+1] = arr[prev]// 
+//          prev--;
+//       }
+//       arr[prev+1] = cv
+//    }
+//    return arr;
+// }
 
 const arr = [5,3,4,1,2];
 const result = insertionSort(arr);
