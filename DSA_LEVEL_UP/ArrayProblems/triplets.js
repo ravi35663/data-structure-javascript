@@ -45,7 +45,7 @@ function triplets(arr,S){
                 j++;
             }
         }
-        // Below part is also correct
+        // Below part is also correct but it will take O(N) extra space for the hashtabl
         // let obj = {}
         // for(let j = i+1; j<sorted_array.length;j++){
         //     let value = sorted_array[j];
