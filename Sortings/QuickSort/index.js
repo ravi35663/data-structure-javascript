@@ -22,7 +22,7 @@ const pivotElementIndex = (arr,start=0,end=arr.length-1)=>{
     let pivot_index = start;
     let pivot_ele = arr[start];
     for(let i=start+1 ; i<=end;i++){
-                // By doing below thing we're finding exact place of pivot element so that we can place pivot element there
+        // By doing below thing we're finding exact place of pivot element so that we can place pivot element there
         if(pivot_ele > arr[i]){
             pivot_index++;
             [arr[pivot_index],arr[i]] = [arr[i],arr[pivot_index]];
