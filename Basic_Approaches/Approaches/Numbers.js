@@ -112,7 +112,7 @@
 
 /*
     ==> Binary To Gray conversion
-        -> (B3B2B1)(Binary Code) == (B3(B3^B2)(B2^B1))(Gray code)
+        -> (B1B2B3B4)(Binary Code) = (B1(B1^B2)(B2^B3)(B3^B4)) (Gray Code)
         -> here '^' is xor
     
     ==> Gray to Binary conversion:
@@ -142,6 +142,7 @@
             greatest one.
 
         -> LCM(a,b) = a * b / GCD(a,b)
+        -> LCM(a,b) * GCD(a,b) = a * b;
 
         -> GCD(Euclidean Algorithm):
             1) Given two numbers a & b, where a greater or equal to b. 
