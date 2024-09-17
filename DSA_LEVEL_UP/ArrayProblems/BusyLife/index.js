@@ -42,4 +42,3 @@ function busyLife(arr){
 const arr = [[7,9], [0,10], [4,5], [8,9], [4,10], [5,7]]
 
 const activities = busyLife(arr);
-console.log("Activities are: ",activities);
