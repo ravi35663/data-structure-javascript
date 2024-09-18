@@ -1,45 +1,65 @@
 /*
-    Busy Life
-    You are actually very busy person. You have a long list of activities. Your aim is to finish much as 
-    activities as possible. In the given figure, if you go to date with crush, you cannot participate in 
-    the coding contest and you can’t watch the movie. Also if you play DotA, you can’t study for the exam. 
-    If you study for the exam you can’t sleep peacefully. The maximum number of activities that you can do 
-    for this schedule is 3.
-    
-    Either you can : (in max 1 slot)
-        1) watch movie, play DotA and sleep peacefully (or)
-        2) date with crush, play DotA and sleep peacefully
+==> Space20
+->  Given a string, write a function to replace all spaces in a string with '%20'. 
+    It is given that the string has sufficient space at the end to hold the additional characters.
 
-    Given the start and finish times of activities, print the maximum number of activities. Input is already store in a vector of pairs. Each pair contains the start and end of the activity.
-
-    Sample Input
-    (7,9) (0,10) (4,5) (8,9) (4,10) (5,7)
-
-    Output
-    3
-
-    Hints
-    Think Sorting!
-
-    Expected Complexity
-    O(NLogN)
+    input: hello world,  how are you?
+    output: hello%20world,%20%20how%20are%20you?
 */
 
-// Sorted Array: [ [ 4, 5 ], [ 5, 7 ], [ 7, 9 ], [ 8, 9 ], [ 0, 10 ], [ 4, 10 ] ]
-function busyLife(arr){
-    let count = 1;
-    arr.sort((a,b)=> (a[1]-b[1]));
-    let finish = arr[0][1];
-    for(let i=1;i<arr.length;i++){
-        if(arr[i][0] >=finish){
-            count++;
-            finish = arr[i][1]
+// Method - 1
+// function replaceSpace(str){
+//     let result = "";
+//     for(let i=0;i<str.length;i++){
+//         result += str[i] === ' ' ? "%20" :str[i]
+//         if(str[i] === ' '){
+//             result
+//         }
+//     }
+//     return result;
+// }
+// const str = 'hello world,  how are you?'
+// console.log("Result is : ",replaceSpace(str));
+
+// Method - 2
+function replaceSpace(str){
+    // lets assume you have array of string is given and now you have to replace all spaces with %20.
+    let arr = [...str];
+    let spaces = 0;
+    console.log("Input is : ",str);
+    arr.forEach(item=>{
+        if(item === ' '){
+            spaces++
         }
+    });
+    spaces = 2* spaces;
+    while(spaces){
+        arr.push(undefined);
+        spaces--
     }
-    return count;
+    let i = arr.length-1; 
+    while(i>=0){
+        if(arr[i] === ' '){
+            let k = 2
+            while(k){
+                for(let j=arr.length-1;j>i;j--){
+                    arr[j] = arr[j-1]
+                };
+                k--;
+            }
+            arr[i] = '%'
+            arr[i+1] = '2'
+            arr[i+2] = '0'
+        }
+        i--;
+    }
+    // console.log("Output: ",arr)
+    return arr.join('');
+
 }
 
-const arr = [[7,9], [0,10], [4,5], [8,9], [4,10], [5,7]]
+const str = 'hello world,  how are you?'
+// const str = 'hello ?'
+console.log("Result is : ",replaceSpace(str));
 
-const activities = busyLife(arr);
-console.log("Activities are: ",activities);
+// ['h', 'e', 'l', 'l', 'o', ' ','w', 'o', 'r', 'l', 'd', ',',' ', ' ', 'h', 'o', 'w', ' ','a', 'r', 'e', ' ', 'y', 'o','u', '?']
