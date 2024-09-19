@@ -58,6 +58,35 @@ function replaceSpace(str){
 
 }
 
+// Method -3 (Optimised)
+function replaceSpace(str){
+    // lets assume you have array of string is given and now you have to replace all spaces with %20.
+    let arr = [...str];
+    let spaces = 0;
+    console.log("Input is : ",str);
+    arr.forEach(item=>{
+        if(item === ' '){
+            spaces++
+        }
+    });
+    spaces = 2* spaces;
+    let end = str.length + spaces;
+    // to add extra spaces at the end
+    arr.length = end;
+    for(let i=str.length-1;i>=0;i--){
+        if(arr[i] === ' '){
+            arr[end-1] = '0';
+            arr[end-2] = '2'
+            arr[end-3] = '%'
+            end = end - 3;
+        }else{
+            arr[end-1] = arr[i];
+            end--
+        }
+    } 
+    return arr.join('');
+}
+
 const str = 'hello world,  how are you?'
 // const str = 'hello ?'
 console.log("Result is : ",replaceSpace(str));
