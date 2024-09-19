@@ -6,3 +6,4 @@
     input: Today is a sunny day.
     output: 'Today', 'is', 'a', 'sunny', 'day'
 */
+
