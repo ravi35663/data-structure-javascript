@@ -13,12 +13,12 @@
     ->  Max and Min Binary heaps are two type of binary heaps.
     ->  Binary Heaps are very useful data structures for sorting, and implementing other 
         data structure like priority queue.
-    -> With a little bit of math we can represent heaps using array/list.
+    ->  With a little bit of math we can represent heaps using array/list.
 */
 
 /*
 ===> BigO of BinaryHeap:
-    -> TimeComplexity
+    ->  TimeComplexity
     ->  Insertion: O(LogN)
     ->  Deletion: O(LogN)
     ->  Search: O(N)
