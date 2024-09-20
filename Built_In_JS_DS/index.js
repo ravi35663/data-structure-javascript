@@ -39,3 +39,16 @@
     -> forEach:	O(n)
     -> reduce : O(n)
 */
+
+/*
+    'shift' in javascript:
+    -> shift is used to remove first element in the array and it will return that first element.
+    -> shift modify original array.
+    -> if array is empty then shift will return 'undefined'.
+    const arr  = [1,2,3,4,5]
+    ele = arr.shift();
+    console.log("Element is : ",ele)// 1
+    console.log("Arr is ",arr) // [2,3,4,5]
+    items = [];
+    ele = items.shift() // undefined
+*/
