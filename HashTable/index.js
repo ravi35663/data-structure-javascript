@@ -3,7 +3,7 @@
     ->  Hash-Map is also known as hash-table.
     ->  Hash-Table are used to store key-value pairs
     ->  Hash tables are arrays, but the keys are not ordered.
-    -> Unlike arrays, hash table are fast for all of the following operations
+    ->  Unlike arrays, hash table are fast for all of the following operations
         ->  Finding values
         ->  Adding new-values
         ->  Moving Values
