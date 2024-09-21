@@ -17,7 +17,6 @@
 function subsequence(input,output,arr){
     // Base-case
     if(input.length === 0){
-        // console.log("output is: ",arr);
         arr.push(output);
         return arr;
     }
@@ -35,17 +34,6 @@ function subsequence(input,output,arr){
 function sortedSubstrings(str){
     let arr = [];
     let output = '';
-    subsequence(str,output,arr);
-    arr.sort((a,b)=>{
-        if(a.length === b.length){
-            return a < b? -1:1
-        }else if(a.length < b.length){
-            return -1
-        }
-        return 1
-    })
-    console.log("Result is : ",arr);
+    const result = subsequence(str,output,arr);
+    console.log("Result is : ",result);
 }
-
-const str = "abcd"
-sortedSubstrings(str);
