@@ -1,51 +1,45 @@
 /*
-    You are given a string, you need to print all subsequences of the string sorted by length and 
-    lexicographic order if length is the same.
+Palindrome Break
+    Given a palindromic string of lowercase English letters palindrome, replace exactly one character with 
+    any lowercase English letter so that the resulting string is not a palindrome and that it is the 
+    lexicographically smallest one possible.
 
-    Sample Input:
-        abcd
+    Return the resulting string. If there is no way to replace a character to make it not a palindrome, 
+    return an empty string.
 
-    Sample Output:
-        '',a, b, c, d, ab, ac, ad, bc, bd, cd, abc, abd, acd, bcd, abcd
+    Example-1
 
+    Input: palindrome = "abccba"
+    Output: "aaccba"
+    Explanation: There are many ways to make "abccba" not a palindrome, such as "zbccba", "aaccba", and "abacba".
+    Of all the ways, "aaccba" is the lexicographically smallest.
+
+    Example-2
+
+    Input: palindrome = "a"
+        Output: ""
+    Explanation: There is no way to replace a single character to make "a" not a palindrome, so return an 
+                empty string.
+
+    Example-3
+    Input: palindrome = "aa"
+    Output: "ab"
+    Example-4
+
+    Input: palindrome = "aba"
+    Output: "abb"
 */
 
-/*
-    Length of the string is n then subsequence of the string is 2^n .
-*/
+function breakPalindrome(str){
 
-function subsequence(input,output,arr){
-    // Base-case
-    if(input.length === 0){
-        // console.log("output is: ",arr);
-        arr.push(output);
-        return arr;
-    }
-
-    // Recursion call
-    let item = input[0];
-    let reduced_input = input.slice(1);
-    //Add item in output
-    subsequence(reduced_input,output+item,arr);
-    // Leave output as it is
-    subsequence(reduced_input,output,arr);
 }
 
-
-function sortedSubstrings(str){
-    let arr = [];
-    let output = '';
-    subsequence(str,output,arr);
-    arr.sort((a,b)=>{
-        if(a.length === b.length){
-            return a < b? -1:1
-        }else if(a.length < b.length){
-            return -1
+function isPalindrome(str){
+    const len = str.length
+    for(let i=0;i<Math.floor(len/2);i++){
+        if(str[i] !== str[len-1-i]){
+            return false;
         }
-        return 1
-    })
-    console.log("Result is : ",arr);
+    }
+    return true;
 }
-
-const str = "abcd"
-sortedSubstrings(str);

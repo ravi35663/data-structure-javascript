@@ -24,3 +24,7 @@ function digitalClock(input){
     const minutes = input % 60
     return `${hour}:${minutes}`;
 }
+
+const input = 1180;
+const result = digitalClock()
+console.log("Result is ",result);
