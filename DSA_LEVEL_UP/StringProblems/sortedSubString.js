@@ -37,3 +37,6 @@ function sortedSubstrings(str){
     const result = subsequence(str,output,arr);
     console.log("Result is : ",result);
 }
+
+const str = "abcd"
+sortedSubstrings(str);

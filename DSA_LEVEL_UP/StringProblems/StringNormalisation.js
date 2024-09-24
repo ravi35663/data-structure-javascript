@@ -19,13 +19,13 @@
 
 function normalisation(str){
     let copy = str.split(' ');
-    copy = copy.map(item=>{
+    copy.map(item=>{
         item = item[0].toUpperCase() + item.slice(1).toLowerCase();
         return item;
     })
-    return copy.join(' ');
+    console.log("Copied string is: ",copy);
+    console.log("Given string is: ",str);
 }
 
 const str = 'This is SO MUCH FUN!';
-const result = normalisation(str);
-console.log("Result is: ",result);
+normalisation(str);
