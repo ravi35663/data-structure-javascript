@@ -1,31 +1,77 @@
+
 /*
-    String Normalisation
-    You are given a sentence with words separated by spaces.
+    Why do we use bit-manipulation?
+    -> It is perform action on bit level that is why it is very fast.
     
-    Your task is to:
-    Write a function that returns a copy of this sentence where all the words: start with a capital letter 
-    the rest of the letters are lower case
+    ==> Bitwise Operators:
+    1) Bitwise AND (&):
+        0 & 0   => 0
+        0 & 1   => 0
+        1 & 0   => 0
+        1 & 1   => 1
+    2) Bitwise OR (|):
+        0 | 0   => 0
+        0 | 1   => 1
+        1 | 0   => 1
+        1 | 1   => 1
+    3) Bitwise XOR (^) (Exclusive OR):
+        0 ^ 0   => 0
+        0 ^ 1   => 1
+        1 ^ 0   => 1
+        1 ^ 1   => 0
+    4) Bitwise NOT (~) (1's complement):
+        ~0  => -1
+        ~1  => -2
+        ~(integer) => - (integer + 1)
+        => Explanation :
+            let a = 0 ==> binary of 0 => 00000000 (upto 8)
+                ~a = ~0 ==> take 1's complement of 0
+                k =  1 1 1 1 1 1 1 1 (upto 32) -> here first bit is sign bit
+                let 2's complements of magnitude of k (without sign bit which is 1)
+                sign of 1 is (-)
+                sign of 0 is (+)
+                1(sign-bit) 0 0 0 0 0 0 0
+                                      + 1
+                        -----------------
+                        -   0 0 0 0 0 0 1
+                        -----------------
+                                        -1
 
-    Note:
-    Your function should not modify the sentence given as argument.
-
-    Sample Input
-        This is SO MUCH FUN!
-
-    Sample Output
-        This Is So Much Fun!
-
+    5) Bitwise RightShift (>>):
+        a>>b ==> (a/(2^b)) -> shift b bits in a toward right. that is discart bit from right and add in left
+        5 >> 2 ==> 00000101 => 00000001 => which is 1
+    6) Bitwise LeftShift (<<)
+        a<<b ==> (a*(2^b)) -> shift b bits in a toward left. that is discart bit from left and add in right
+                5 >> 2 ==> 00000101 => 00010100 => which is 20
 */
 
-function normalisation(str){
-    let copy = str.split(' ');
-    copy = copy.map(item=>{
-        item = item[0].toUpperCase() + item.slice(1).toLowerCase();
-        return item;
-    })
-    return copy.join(' ');
+/*
+    ==> Bit-Operations:
+    1) Get ith Bit
+    2) Set ith Bit
+    3) Clear ith Bit
+*/
+
+function getIthBit(num,i){
+    let mask = (1<<i); // this will place 1 at ith position  
+    let temp_num = mask & num;
+    return temp_num > 0? 1 : 0 
 }
 
-const str = 'This is SO MUCH FUN!';
-const result = normalisation(str);
+const setIthBit = (num,i)=>{
+    const mask = (1<<i)
+    return mask | num;
+}
+
+const clearIthBit = (num,i)=>{
+    let mask = (1<<i) // 
+    mask = ~mask;
+    num = mask & num;
+    return num;
+}
+
+const num = 10;
+const i = 3;
+// const result = getIthBit(num,i);
+const result = clearIthBit(num,i)
 console.log("Result is: ",result);
