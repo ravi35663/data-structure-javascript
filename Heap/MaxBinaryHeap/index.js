@@ -14,6 +14,20 @@
 */
 
 /*
+    Insert value:
+    1) Add item at the end of the heap
+    2) Bubble up the heap so that you put the item at the right spot
+    3) Get the index of recent added item
+    4) Run a loop untill the item has not reach thier right spot.
+        ->  compare child item with parent
+        ->  if child item is greater than parent then swap the value 
+            and make parent_index = child_index
+            
+        -> else item is already at the right spot and then break the loop thier.
+*/
+
+
+/*
 ===> Extract Maximum value:
     ->  The procedure for deleting the root from the heap (effiently extracting maximum-element from 
         the max heap or extracting the minimum element from the min-heap) and restoring the 
