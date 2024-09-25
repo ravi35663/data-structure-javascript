@@ -70,6 +70,24 @@ const clearIthBit = (num,i)=>{
     return num;
 }
 
+
+function updateIthBit(num,i,v){ // v either 1 or 0
+    // Clear the bit
+    num = clearIthBit(num,i)
+    // Create mask
+    const mask = (v<<i);
+    // Perform OR Operator
+    num = mask | num;
+}
+
+function clearLastIthBit(num,i){
+    // 1101011
+    // let i=5 then we have to clear from 0 to 4th bits which is 1100000 of given number 1101011 
+    const mask = (~1) <<i
+    num = num & mask;
+    return num;
+}
+
 const num = 10;
 const i = 3;
 // const result = getIthBit(num,i);
