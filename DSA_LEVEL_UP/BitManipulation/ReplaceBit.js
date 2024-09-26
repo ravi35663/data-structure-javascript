@@ -10,3 +10,21 @@
     i = 2, j = 6
     Output: 1001010100 (binary)
 */
+
+function clearBitsIntTheRange(n,i,j){
+    let a = (~0) << (j+1);
+    let b = (1<<i) - 1;
+    let mask = a | b;
+    return n & mask
+}
+
+function replaceBits(n,i,j,m){
+    n = clearBitsIntTheRange(n,i,j);
+    m = m<<i;
+    return n | m
+} 
+
+let N = 15 
+let M = 2 
+let i = 2, j = 4;
+console.log(replaceBits(N,i,j,M)); // should be 11
