@@ -1,15 +1,36 @@
-/*
-    Check a number is power of two:
-*/
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var threeSum = function(nums) {
+    nums.sort((a,b)=>{
+      return a-b;
+    });
+    let result = [];
+    let len = nums.length;
+    // for(let i=0;i<len;i++){
+    let i=0;
+    while(i<nums.length){
+      let j= i+1;
+      let k = len-1;
+      while( j< k ){
+        console.log("I and j",j,k);
+          let sum = nums[i] + nums[j] + nums[k]
+          if(sum === 0){
+              result.push([nums[i],nums[j],nums[k]])
+              j++;
+              k--;
+              break
+          }else if(sum > 0){
+              k--;
+          }else{
+              j++
+          }
+      }
+      i++;
+    }
+    return result;
+  };
 
-function powerTwo(num){
-    let temp_num = num - 1;
-    num = num & temp_num;
-    return num ==0 ? true:false;
-}
-
-const nums = [1,2,3,4,5,6,7,8,9,10,16,32,64,55];
-nums.forEach(item=>{
-    const result = powerTwo(item);
-    console.log(`${item} is power of two:  ${result}`);
-})
+  const nums = [-1,0,1,2,-1,-4]
+  console.log(threeSum(nums));
