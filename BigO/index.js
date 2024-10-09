@@ -52,8 +52,8 @@
     -> We can also use big-O notation to analyze space complexity, that is, how much 
        additional memory we need to allocate in order to run the code in our algorithm
     -> whenever we’re talking about space complexity, we’re talking about auxiliary 
-       space complexity
-    -> Most primitive data types 'boolean', 'number', 'null', 'undefined' are takes 
+       space complexity (Extra Space)
+    -> Mostly primitive data types 'boolean', 'number', 'null', 'undefined' are takes 
        constant space (one block of memory for each DT). 
        i.e. a = 1 or a = 1000 or a = undefined or a = null or a = true (Take constant space)
     -> String takes O(N) space complexity (n is length of string). 

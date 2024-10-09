@@ -1,7 +1,9 @@
 /*
 ===> Sliding Window:
     ->  Sliding window techique is useful for solving problems in array/strings, especially it is 
-        considered as technique that could reduced the time complexity from O(n^2) to O(n). 
+        considered as technique that could reduced the time complexity from O(n^2) to O(n).
+    ->  In Sliding Window problems you may need to expand window from one side and contract window from 
+        other side. 
 */
 
 /*
