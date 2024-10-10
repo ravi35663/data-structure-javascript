@@ -41,6 +41,7 @@ function findMinSubArray(nums,sum) {
         // if total sum  of current created window items is greater than sum then 
         // reduce the window and find another sum with on less value of start
         else if(total >= sum){
+            // This is used to get the window size
             minLength = Math.min(minLength,end-start);
             total -= nums[start];
             start++;
