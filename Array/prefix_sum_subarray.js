@@ -3,7 +3,7 @@
     prefix sum sub-array is method to calculate maximum or minimum sub array in an array
     ==> Here time complexity is O(n^2)
 */
-
+// Dry- Run and try to understand how its works
 function maxSumSubArray(arr){
     let prefix_sum = new Array(arr.length);
     prefix_sum[0] = arr[0]; 

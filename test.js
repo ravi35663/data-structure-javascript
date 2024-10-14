@@ -1,23 +1,11 @@
-// Max Sub-Array Sum
-
-function maxSubArraySum(arr,n){
-    if(arr.length <n){
-        return null;
+function test(arr){
+    let ps = new Array(arr.length);
+    ps[0] = arr[0];
+    for(let i=1;i<arr.length;i++){
+        ps[i] = ps[i-1] + arr[i];
     }
-    // find out 1st n number sum
-    let sum = 0;
-    for(let i=0;i<n;i++){
-        sum+=arr[i];
-    }
-    let max_sum = sum;
-    for(let i=n;i<arr.length;i++){
-        sum  = sum + arr[i] - arr[i-n];
-        if(sum > max_sum){
-            max_sum = sum;
-        }
-    }
-    return max_sum
+    console.log("prefix sum is :",ps);
 }
 
-const arr = [1,2,5,2,8,1,5];
-const n = 2;
+const arr = [1,2,-3,4,-1];
+test(arr)
