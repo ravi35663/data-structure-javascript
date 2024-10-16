@@ -1,7 +1,7 @@
 /*
 ===> Bubble Sort: -
     -> A sorting algorithm where the largest values bubble up into the top.
-    -> Swapping Ways in javascript: 
+    -> Swapping in javascript: 
 	    ES-5
 	    swap(a,b){
 		   let temp = a;
@@ -32,9 +32,9 @@
 */
 
 /*
-==> Optimised Bubble sort:
-    -> if we have not swapped last time then we don’t need to swap further . 
-    We can break the swapping there .
+==> Optimized Bubble sort:
+    ->  if we have not swapped last time then we don’t need to swap further . We can break the swapping 
+        there .
 */
 
 const arr = [1,9,12,2,3,43,56,90,4,5,6];

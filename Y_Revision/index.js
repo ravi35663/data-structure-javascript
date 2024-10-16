@@ -1,9 +1,9 @@
 /*
 ===> Revise Topics Serial wise:
 1) Basic Approaches,Terminologies and FlowChart and BigO  
-2) Array and Built-In Js DS  ==> Inprogress
-3) DS - Introduction
-4) Searching and Sorting
+2) Array and Built-In Js DS
+3) DS - Introduction    
+4) Searching and Sorting ==> Inprogress
 5) Recursion
 6) Linked List
 7) Stack
