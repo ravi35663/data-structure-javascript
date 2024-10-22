@@ -16,23 +16,26 @@
 */
 
 function arrayProduct(arr){
-    let len = arr.length;
-    let left = new Array(len);
-    let right = new Array(len);
-    let prod = new Array(len);
-    left[0] = 1;
-    right[len-1] = 1;
+    const len = arr.length;
+    // Make prefix array(product array)
+    const prefix = new Array(len);
+    prefix[0] = 1;
     for(let i=1;i<len;i++){
-        left[i] = left[i-1] * arr[i-1];
+        prefix[i] = prefix[i-1] * arr[i-1];
     }
+    // Make suffix array(product array)
+    const suffix = new Array(len);
+    suffix[len-1] = 1;
     for(let i=len-2;i>=0;i--){
-        right[i] = right[i+1] * arr[i+1];
+        suffix[i] = suffix[i+1] * arr[i+1];
     }
+
+    // make the result array and make the product of suffix and prefix to get product of the array
+    const result = new Array(len);
     for(let i=0;i<len;i++){
-        prod[i] = left[i] * right[i]; 
+        result[i] = prefix[i] * suffix[i];
     }
-    // console.log("Left is: ",left,right);
-    return prod;
+    return  result;
 }
 
 const arr =  [1,2,3,4,5]
