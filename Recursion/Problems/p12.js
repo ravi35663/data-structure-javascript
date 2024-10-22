@@ -5,15 +5,23 @@
     // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
 */
 
-const capitalizedWords = (works)=>{
-    let temp_array = [];
-    if(works.length === 0){
-        return temp_array;
-    }
-    temp_array.push(works[0].toUpperCase());
-    return temp_array = temp_array.concat(capitalizedWords(works.slice(1)));
-}
+// const capitalizedWords = (works)=>{
+//     let temp_array = [];
+//     if(works.length === 0){
+//         return temp_array;
+//     }
+//     temp_array.push(works[0].toUpperCase());
+//     return temp_array = temp_array.concat(capitalizedWords(works.slice(1)));
+// }
 
+function capitalizedWords(arr){
+    if(n===arr.length){
+        return arr
+    }
+
+    arr[n] = arr[n].toUpperCase();
+    return capitalizedWords(arr,n+1);
+}
 // This one is more optimised
 
 function capitalizeFirst (array) {

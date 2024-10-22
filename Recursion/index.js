@@ -1,6 +1,6 @@
 /*
 ==> Divide and Conquer :-
-    -> this pattern is designed to chunk large data sets into smaller chunks and 
+    -> this pattern is designed to break large data sets into smaller chunks and 
        repeat the process for subsets of data .
     -> This pattern tremendously decreases the time complexity .
     -> few examples are: binary search, quick sort, merge sort ..etc

@@ -1,24 +1,51 @@
-function pivotIndex(arr,start=0,end=arr.length-1){
-    let pi = start;
-    let p_ele = arr[pi];
-    for(let i=start+1;i<=end;i++){
-        if(p_ele > arr[i]){
-            pi++;
-            [arr[pi],arr[i]] = [arr[i],arr[pi]];
+/*
+    Write a function called collectStrings which accepts an object and returns an array of 
+    all the values in the object that have a typeof string
+    const obj = {
+        stuff: "foo",
+        data: {
+            val: {
+                thing: {
+                    info: "bar",
+                    moreInfo: {
+                        evenMoreInfo: {
+                            weMadeIt: "baz"
+                        }
+                    }
+                }
+            }
         }
     }
-    [arr[start],arr[pi]] = [arr[pi],arr[start]];
-    return pi;
-}
-
-const quickSort = (arr,start=0,end=arr.length-1)=>{
-    if(start < end){
-        const pi = pivotIndex(arr,start,end);
-        quickSort(arr,start,pi-1);
-        quickSort(arr,pi+1,end);
+    collectStrings(obj) // ["foo", "bar", "baz"])
+*/
+function collectStrings(obj){
+    const values = Object.values(obj);
+    let result = [];
+    for(let i=0;i<values.length;i++){
+        let item = values[i];
+        if(item.constructor === Object){
+            const r = collectStrings(item)
+            result = result.concat(r);
+        }else if(item.constructor === String){
+            result.push(item);
+        }
     }
-    return arr;
+    return result;
 }
-
-const ar = [3,7,2,-1,4,1,5,2,12,8,9];
-console.log(quickSort(ar));
+const obj = {
+    stuff: "foo",
+    data: {
+        val: {
+            thing: {
+                info: "bar",
+                moreInfo: {
+                    evenMoreInfo: {
+                        weMadeIt: "baz"
+                    }
+                }
+            }
+        }
+    }
+}
+const res = collectStrings(obj) // ["foo", "bar", "baz"])
+console.log("Result is: ",res);

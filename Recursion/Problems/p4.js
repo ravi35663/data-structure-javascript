@@ -6,10 +6,13 @@
 // recursiveRange(10) // 55 
 
 
-const productOfArray = (arr)=>{
-    if(arr.length === 0){
-        return 1;
+function recursiveRange(num){
+    if(num === 0){
+        return 0;
     }
-    return arr[0] * productOfArray(arr.slice(1)); 
+    return num + recursiveRange(num-1);
 }
-console.log(productOfArray([1,2,3,4]))
+
+const num = 10;
+const result = recursiveRange(num);
+console.log("Result is: ",result);
