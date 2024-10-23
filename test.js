@@ -1,51 +1,38 @@
 /*
-    Angry Birds
-
-    There is a long wire along a straight line, which contains N bird nests at positions x1, x2 ....xN.
-
-    There are B (B<=N) birds, which become angry towards each other once put into a nest. 
-    To put the birds from hurting each other you want to assign birds to nests such that minimum 
-    distance between any two birds is as large as possible. 
-    What is the largest minimum distance?
+    Kadane's Algorithms:
+    -> This algorithm is used to find maximum sub array sum in linear time complexity
+    -> if all the array elements are negative then maximum of all element is a max-sub array
+    -> if current sum is negative reset it to zero
+    -> it does not contains extra space like prefix approach.
+    -> Time complexity is O(n) and space is constant.
+    Example:
+        e.g.
+        arr = [-2,3,4,-1,5,-12,6,1,3,2]
+        Elements:    -2     3   4   -1    5      -12    6   1     3       2
+        CS:           0     3   7   6     11       0    6   7    10      12    
+        MS:           0     3   7   7     11       11   11  11   11      12       
 */
-
-
-function maximumDistribution(birds,n,nest_ordinates){
-    nest_ordinates.sort((a,b)=> a-b);
-    let start = 0;
-    let end = nest_ordinates[n-1] - nest_ordinates[0];
-    let distribution = -1;
-    while(start<=end){
-        const mid = Math.floor((start+end)/2);
-        // minimum distance should be 'mid' between the birds
-        // start at position 0 and go further
-        let start_bird_position = nest_ordinates[0];
-        let count = 1;
-        let i=1;
-        while(i<n){
-            if(nest_ordinates[i] - start_bird_position >=mid){
-                start_bird_position = nest_ordinates[i];
-                count++;
-                if(count === birds){
-                    break;
-                }
-            }
-            i++
+// also find the sub-array
+function maximumSubArraySum(arr){
+    let cs = 0, max = -Infinity;
+    let sub_array = [];
+    let result_sub_array;
+    for(let i=0;i<arr.length;i++){
+        cs +=arr[i];
+        sub_array.push(arr[i])
+        if(max < cs){
+            result_sub_array = [...sub_array]
+            max = cs;
         }
-        if(count === birds){
-            distribution = mid;
-            start = mid + 1;
-        }else{
-            end = mid -1;
+        if(cs < 0){
+            sub_array = [];
+            cs = 0;
         }
     }
-    return distribution;
-
+    console.log("Sub array is: ",result_sub_array);
+    return max
 }
 
-const nest_ordinates = [1,2,4,8,9];
-const birds = 3;
-const n = 5 // Number of nests
-
-const d = maximumDistribution(birds,n,nest_ordinates);
-console.log("Maximum distribution is: ",d);
+const arr = [-2,3,4,-1,5,-12,6,1,3,2];
+const result = maximumSubArraySum(arr);
+console.log("Maximum sub-array sum is: ",result);

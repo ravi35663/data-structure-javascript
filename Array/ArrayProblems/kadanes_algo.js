@@ -14,18 +14,23 @@
 */
 
 function maxSubArraySum(arr){
-    let cs = 0, ms = -Infinity;
-    // if all the elements are negative number
+    let cs = 0, max = -Infinity;
+    let sub_array = [];
+    let result_sub_array;
     for(let i=0;i<arr.length;i++){
         cs +=arr[i];
-        if(cs > ms){
-            ms = cs
+        sub_array.push(arr[i])
+        if(max < cs){
+            result_sub_array = [...sub_array]
+            max = cs;
         }
         if(cs < 0){
+            sub_array = [];
             cs = 0;
         }
     }
-    return ms;
+    console.log("Sub array is: ",result_sub_array);
+    return max
 }
 const arr = [-2,3,4,-1,5,-12,6,1,3,2]
 // const arr = [-2,-3,-4,-1,-5,-12,-6,-1,-3,-2]
