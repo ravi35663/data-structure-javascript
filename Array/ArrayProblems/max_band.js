@@ -1,7 +1,7 @@
 /*
     Given an array containing N integers, find length of the longest band.
     A band is defined as subsequence which can be re-ordered in such a manner that all elements appears
-    consequntly (i.e. the absolute difference of 1 between neighbouring elements)
+    consequently (i.e. the absolute difference of 1 between neighboring elements)
     Here,
     A longest band is a band which contains maximum subsequence .
     const arr = [1,9,3,0,18,5,2,4,10,7,12,6];
@@ -12,28 +12,25 @@
 
 /* Below program has time complexity is O(n)*/ 
 function findMaximumBand(arr){
-    let obj = {};
+    // first we need to make existence of the range elements
+    let items = {};
+    // To keep maximum band value
     let max_band = 0;
-    let count = 0;
-    arr.forEach(item => obj[item] = true);
-    for(let i=0; i<arr.length; i++){ // 12
+    arr.forEach(item=> items[item]=true);
+    for(let i=0;i<arr.length;i++){
         let item = arr[i];
         let band = 0;
-        if(obj[item-1] === undefined){
-            while(obj[item]){
+        if(items[item-1] === undefined){
+            while(items[item]){
                 item++;
-                band++
-                count++
+                band++;
             }
             if(band > max_band){
                 max_band = band;
             }
-        }else{
-            count++;
         }
     }
-    console.log("Count is : ",count);
-    return max_band
+    return max_band;
 }
 
 const arr = [1,9,3,0,18,5,2,4,10,7,12,6];

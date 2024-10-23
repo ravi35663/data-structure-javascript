@@ -1,38 +1,37 @@
 /*
-    Kadane's Algorithms:
-    -> This algorithm is used to find maximum sub array sum in linear time complexity
-    -> if all the array elements are negative then maximum of all element is a max-sub array
-    -> if current sum is negative reset it to zero
-    -> it does not contains extra space like prefix approach.
-    -> Time complexity is O(n) and space is constant.
-    Example:
-        e.g.
-        arr = [-2,3,4,-1,5,-12,6,1,3,2]
-        Elements:    -2     3   4   -1    5      -12    6   1     3       2
-        CS:           0     3   7   6     11       0    6   7    10      12    
-        MS:           0     3   7   7     11       11   11  11   11      12       
+    Given an array containing N integers, find length of the longest band.
+    A band is defined as subsequence which can be re-ordered in such a manner that all elements appears
+    consequently (i.e. the absolute difference of 1 between neighboring elements)
+    Here,
+    A longest band is a band which contains maximum subsequence .
+    const arr = [1,9,3,0,18,5,2,4,10,7,12,6];
+    max_band = [0,1,2,3,4,5,6,7]    which is 8
+
+    Sol: you can solve it be sorting the arr but time complexity will be NLogN.
 */
-// also find the sub-array
-function maximumSubArraySum(arr){
-    let cs = 0, max = -Infinity;
-    let sub_array = [];
-    let result_sub_array;
+function findMaximumBand(arr){
+    // first we need to make existence of the range elements
+    let items = {};
+    // To keep maximum band value
+    let max_band = 0;
+    arr.forEach(item=> items[item]=true);
     for(let i=0;i<arr.length;i++){
-        cs +=arr[i];
-        sub_array.push(arr[i])
-        if(max < cs){
-            result_sub_array = [...sub_array]
-            max = cs;
-        }
-        if(cs < 0){
-            sub_array = [];
-            cs = 0;
+        let item = arr[i];
+        let band = 0;
+        if(items[item-1] === undefined){
+            while(items[item]){
+                item++;
+                band++;
+            }
+            if(band > max_band){
+                max_band = band;
+            }
         }
     }
-    console.log("Sub array is: ",result_sub_array);
-    return max
+    return max_band;
 }
 
-const arr = [-2,3,4,-1,5,-12,6,1,3,2];
-const result = maximumSubArraySum(arr);
-console.log("Maximum sub-array sum is: ",result);
+
+
+const arr = [20,21,22,23,24,25,26,27,28,21,9,3,0,18,5,2,4,10,7,12,6,9,29,30,31,32,33,34];
+console.log("Maximum band: ",findMaximumBand(arr)); 
