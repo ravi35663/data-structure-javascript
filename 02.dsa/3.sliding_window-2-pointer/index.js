@@ -158,3 +158,76 @@ Used in:
   - Update window state incrementally
   - Avoid recomputation → O(n)
 */  
+
+/*
+Example 1:
+    Subarray Sum Equals K:
+    arr = [1, 2, 3]
+    k = 3
+*/
+
+// Dry run this algorithm
+function subarraySum(arr, k) {
+    const map = new Map();
+
+    // prefixSum = 0 has occurred once
+    map.set(0, 1);
+
+    let sum = 0;
+    let count = 0;
+
+    for (const num of arr) {
+        sum += num;
+
+        const required = sum - k;
+
+        if (map.has(required)) {
+            count += map.get(required);
+        }
+
+        map.set(sum, (map.get(sum) || 0) + 1);
+    }
+
+    return count;
+}
+
+/*
+Example 2 — Longest Subarray With Sum K:
+    arr = [1, -1, 5, -2, 3]
+    k = 3
+*/ 
+
+function maxSubArrayLen(arr, k) {
+    const map = new Map();
+
+    // prefix sum 0 occurs before index 0
+    map.set(0, -1);
+
+    let sum = 0;
+    let maxLen = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+
+        const required = sum - k;
+
+        if (map.has(required)) {
+            maxLen = Math.max(maxLen, i - map.get(required));
+        }
+
+        // Store ONLY the first occurrence
+        if (!map.has(sum)) {
+            map.set(sum, i);
+        }
+    }
+
+    return maxLen;
+}
+/*
+| Problem                             | What HashMap stores                 |
+| ----------------------------------- | ----------------------------------- |
+| Count subarrays with sum K          | `prefixSum → frequency`             |
+| Longest subarray with sum K         | `prefixSum → earliest index`        |
+| Check if subarray with sum K exists | `prefixSum → seen`                  |
+| Zero-sum subarray                   | `prefixSum → earliest index / seen` |
+*/

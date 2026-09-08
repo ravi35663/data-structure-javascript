@@ -16,14 +16,14 @@ class Solution {
     heapSort(nums) {
         // Build max heap:
         let leafs = Math.floor(nums.length/2) - 1;
-        for(let i = leaf; i>=0; i--){
+        for(let i = leafs; i>=0; i--){
             this.heapifyDown(nums, i, nums.length);
         }
         // Extract Max:
         let end = nums.length - 1;
         while(end >= 0){
             // Extract max and swap with 0th
-            [nums[0],nums[end]] = [nums[end],nums[0]];
+            [nums[0], nums[end]] = [nums[end], nums[0]];
             this.heapifyDown(nums, 0, end);
             end--;
         }

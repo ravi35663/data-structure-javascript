@@ -11,7 +11,7 @@ const zeroSum = (sortedArray)=>{
     while(left < right){
         sum = sortedArray[left] + sortedArray[right]
         if( sum === 0){
-            return [sortedArray[left] ,sortedArray[right]];
+            return [sortedArray[left], sortedArray[right]];
         }else if(sum > 0){
             right--;
         }else{

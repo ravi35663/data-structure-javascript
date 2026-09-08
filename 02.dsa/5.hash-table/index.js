@@ -59,15 +59,14 @@ console.log(hashTwo(item,3));
     3)  Hash tables can add new key-values quickly.
     4)  Hash tables store data in a large array, and work by hashing the keys.
     5)  A good hash should be fast, distribute keys uniformly, and be deterministic.
-    6)  Separate chaining and linear probing are two strategies used to deal with two keys that hash to the same 
-        index.
+    6)  Separate chaining and linear probing are two strategies used to deal with two keys that 
+        hash to the same index.
 */
 /*
 => BigO of hash-function: (Average)
     1) Insert:  O(1)
     2) Delete:  O(1)
     3) Access:  O(1)    
-
 */
 // Implementation of hash-table
 class Hash{

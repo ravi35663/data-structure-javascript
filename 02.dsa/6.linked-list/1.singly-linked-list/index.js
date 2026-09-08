@@ -13,8 +13,8 @@
 
 => Array Vs Linked List :-
     1)  In array indexes in the order which in linked list there is no indexes
-    2)  Insertion and Deletion can be expensive in an array while in linked list it is 
-        faster than array
+    2)  Insertion and Deletion can be expensive in an array while in linked list it is faster than 
+        array
     3)  Quick can access any index while in linked list random access is not allowed
     4)  Array consume less memory than linked list
 */
@@ -26,9 +26,8 @@
 */
 /*
 => Notes:-
-    1)  Singly linked list is an excellent alternative to arrays if we frequently require 
-        insertion and deletion at the beginning.
+    1)  Singly linked list is an excellent alternative to arrays if we frequently require insertion 
+        and deletion at the beginning.
     2)  Array contains a built in index whereas linked list does not.
-    3)  Linked list Data structure is the foundation of data structure like stack and 
-        queue.
+    3)  Linked list Data structure is the foundation of data structure like stack and queue.
 */

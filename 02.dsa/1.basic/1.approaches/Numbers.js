@@ -66,11 +66,11 @@
         Sum of number of its proper divisor is equal to that number 
         (e.g. 6 => 1 + 2 + 3 == 6 ..etc)
     
-    3) Strong Number :- 
+    3) Strong Number:- 
         A strong number is equal to the sum of factorial of its digits
         i.e.  (145 = 1! + 4! + 5! == 1 + 24 + 120 == 145)
     
-    4) Armstrong number : - 
+    4) Armstrong number: - 
        An Armstrong number is the sum of the power of the digits with the total number 
        of digits. 
           example 1: 
@@ -80,10 +80,12 @@
           wxyz  -> number of digits is 4
 	      power(w,4) + power(x,4) + power(y,4) + power(z,4);
 
-    5)  ‘A’ -> 65 , ‘Z’ -> 90 , ‘a’-> 97 , ‘z’-> 128 , ‘0’(Zero)-> 48,’9’-> 57
+    5)  ‘A’ -> 65, ‘Z’ -> 90, ‘a’-> 97, ‘z’-> 128, ‘0’(Zero)-> 48, ’9’-> 57
     7)  Each character is of 1 byte (8 bits) 
+
     8)  0, '', false, null, undefined and NaN value is treated as false in javascript 
         while any non-zero value is treated as true.
+
     9)  1 Byte is minimum size of the bucket that is why boolean always consume 1 byte 
         memory instead of 1 bit (0 or 1)
             e.g is_delete = true;
@@ -104,12 +106,12 @@
             }
             return true;
         }
-        ->  T.C = O(LogN)
+        ->  T.C = O(sqrt(n)) : is not not better than O(LogN)
 */
 /*
 => Gray Code:
-    -   Gray code is used in many applications because it reduces the likelihood of 
-        errors and simplifies logic operations.
+    -   Gray code is used in many applications because it reduces the likelihood of errors and 
+        simplifies logic operations.
 
 => Uses of gray code:
     -   Digital communications: Gray code helps correct errors in digital communications like cable TV and 
@@ -125,7 +127,7 @@
     -   (B1B2B3B4)(Binary Code) = (B1(B1^B2)(B2^B3)(B3^B4)) (Gray Code)
     -   here '^' is xor
     
-==> Gray to Binary conversion:
+=> Gray to Binary conversion:
     -   (G1G2G3)(Gray Code) = (G1(G1+G2)(G1+G2+G3))(Binary code)
     -   here '+' us binary sum sign
 */
@@ -139,7 +141,7 @@
 */
 
 /*
-=> LCM and HCF(GCD)
+=> LCM and HCF(GCD):
     -   LCM (Least common multiplication)
         A = 20
         B = 3
@@ -148,10 +150,9 @@
     -   HCF (Highest common factor) or GCD (Greatest common divisor)
         A = 12
         B = 15 
-        Here GCD will be 3 because 3 is common divisor of both 12 and 15 and it 
-        greatest one.
+        Here GCD will be 3 because 3 is common divisor of both 12 and 15 and it greatest one.
 
-    -   LCM(a, b) = a * b / GCD(a,b)
+    -   LCM(a, b) = a * b/ GCD(a,b);
     -   LCM(a, b) * GCD(a,b) = a * b;
 
     -> GCD(Euclidean Algorithm):
@@ -189,7 +190,7 @@
 	-> Blue -> 0 to 255 (range max) (0,0,255)
 	-> Black -> (0,0,0)
 	-> White -> (255,255,255) (RGB)
-	-> 4MB image --> row * column * 3(3 is RGB) * 8 bits
+	-> 4MB image -> row * column * 3(3 is RGB) * 8 bits
     -> 255 is maximum space of a color
     -> Sequence of images is known as video .
     -> Image is 3d object (colored image black and white is 3d image)

@@ -70,7 +70,7 @@ function mergeSortedArray(arr,result,left,mid,right){
         result[k++] = arr[j++]
     }
     // Copy the sorted array into original array:
-    for(let i=left;i<=right;i++){
+    for(let i=left; i<=right; i++){
         arr[i] = result[i];
     }
     return inversion;

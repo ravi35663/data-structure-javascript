@@ -12,11 +12,11 @@
 // Example: Find the maximum sum of a subarray of size k.
 function maxSum(arr,k){
     let sum = 0;
-    for(let i=0;i<k;i++){
-        sum +=arr[i];
+    for(let i=0; i<k; i++){
+        sum += arr[i];
     }
     let max_sum = sum;
-    for(let i=k;i<arr.length;i++){
+    for(let i=k; i<arr.length; i++){
         sum += arr[i] - arr[i-k];
         if(sum > max_sum){
             max_sum = sum;

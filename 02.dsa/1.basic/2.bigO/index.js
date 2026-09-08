@@ -37,8 +37,8 @@
     Note: -
         -> performance.now():- It is a js function which gives you time in millisecond 
         -> T.C = O(n^2) (n square time complexity) //quadratic 
-            for(let i=0;i<n;i++){// this will run n times
-                for(let j=0;j<n;j++){ // this will run n times
+            for(let i=0; i<n; i++){// this will run n times
+                for(let j=0; j<n; j++){ // this will run n times
                 }
             }
     -> T.C -> O(n^2) (quadratic)
@@ -48,35 +48,35 @@
 
 /*
 => Space Complexity : -
-    -> We can also use big-O notation to analyze space complexity, that is, how much 
-       additional memory we need to allocate in order to run the code in our algorithm
+    ->  We can also use big-O notation to analyze space complexity, that is, how much additional 
+        memory we need to allocate in order to run the code in our algorithm
 
-    -> whenever we’re talking about space complexity, we’re talking about auxiliary 
-       space complexity (Extra Space).
+    ->  whenever we’re talking about space complexity, we’re talking about auxiliary space 
+        complexity (Extra Space).
 
-    -> Mostly primitive data types 'boolean', 'number', 'null', 'undefined' are takes 
-       constant space (one block of memory for each DT). 
-       i.e. a = 1 or a = 1000 or a = undefined or a = null or a = true (Take constant space)
+    ->  Mostly primitive data types 'boolean', 'number', 'null', 'undefined' are takes constant 
+        space (one block of memory for each DT). 
+        i.e. a = 1 or a = 1000 or a = undefined or a = null or a = true (Take constant space)
 
-    -> String takes O(N) space complexity (n is length of string). 
-       i.e. a = “learn js”  .
+    ->  String takes O(N) space complexity (n is length of string). 
+        i.e. a = “learn js”  .
 
-    -> reference types are generally O(N).where N is length(for arrays) or the number 
-       of keys (for objects)
+    ->  Reference types are generally O(N). where N is length(for arrays) or the number of keys 
+        (for objects)
 
     -> Example : -
-		function sum(arr){
+        function sum(arr){
 			let total = 0;
 			for(let i=0; i<arr.length; i++){
     	        total +=arr[i];
             }
             return total;
         } // here only two variable is used inside the function which only taking two 
-             blocks of memory which is total and i.
+            blocks of memory which is total and i.
 
-    -> Space Complexity : O(2) = O(1) // Constant .
-    -> here, we’re not considering arr because the above variable would always be the
-       same for every length of the arr ele. 
+    ->  Space Complexity : O(2) = O(1) // Constant .
+    ->  Here, we’re not considering arr because the above variable would always be the same for 
+        every length of the arr ele. 
 
     -> Example 2: 
         function double(arr){
@@ -94,7 +94,7 @@
 
 /*
 => Logarithmic : -
-    -> Note: here all log is of base 2.
+    -> Note: All log is of base 2.
     -> Log8 -> 3
     -> logarithmic time complexity is better than O(n).
     -> For best understanding follow the image

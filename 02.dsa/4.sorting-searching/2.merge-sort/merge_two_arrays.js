@@ -1,11 +1,10 @@
 // 
-const mergeTwoArrays = (arr1,arr2)=>{
+const mergeTwoArrays = (arr1, arr2)=>{
     let i=0;
     let j=0;
     let m = arr1.length;
     const n = arr2.length;
     const arr = [];
-    // 
     while(i<m && j<n){
         if(arr1[i] < arr2[j]){
             arr.push(arr1[i]);

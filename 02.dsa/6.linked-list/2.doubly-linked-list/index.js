@@ -1,13 +1,11 @@
 /*
 => Doubly Linked List :-
-    ->  Doubly linked list is identical to singly linked list with an extra previous 
-        pointer.
+    ->  Doubly linked list is identical to singly linked list with an extra previous pointer.
     ->  '[Previous Address | Value | Next Address]' -> this is how DLL Node looks like.
     ->  Doubly linked lists take extra memory but give you more flexibility with insertion, 
         deletion and all.
 
-    ->  Doubly linked lists are better for finding node (almost half time of singly 
-        link list)
+    ->  Doubly linked lists are better for finding node (almost half time of singly link list)
 */ 
 
 /*
@@ -116,7 +114,7 @@ class DoublyLinkedList{
     }
 
     // Set value at particular index
-    set(index,value){
+    set(index, value){
         let node = this.get(index);
         if(!node){
             return false;
@@ -126,7 +124,7 @@ class DoublyLinkedList{
     }
 
     // Insert node at any position
-    insert(index,value){
+    insert(index, value){
         if(index <0 || index > this.length){
             return false;
         }

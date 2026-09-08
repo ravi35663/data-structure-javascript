@@ -18,7 +18,7 @@ function maxSubArraySum(arr){
     let cs = 0, max = -Infinity;
     let sub_array = [];
     let result_sub_array;
-    for(let i=0;i<arr.length;i++){
+    for(let i=0; i<arr.length; i++){
         cs +=arr[i];
         sub_array.push(arr[i])
         if(max < cs){

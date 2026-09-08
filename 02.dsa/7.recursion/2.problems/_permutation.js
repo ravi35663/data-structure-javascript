@@ -25,10 +25,10 @@ function permutation(n, str, swap_index, result){
     }
     for(let i=swap_index; i<n; i++){
         // swap_index
-        [str[swap_index],str[i]] = [str[i],str[swap_index]];
+        [str[swap_index], str[i]] = [str[i], str[swap_index]];
         permutation(n, str, swap_index+1,result);
         // Backtracking to restore its original position
-        [str[swap_index],str[i]] = [str[i],str[swap_index]];
+        [str[swap_index], str[i]] = [str[i], str[swap_index]];
     }
 }
 
